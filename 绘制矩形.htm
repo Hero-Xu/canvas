@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绘制矩形</title>
+</head>
+<body>
+	<canvas id="draw" width="200px" height="200px"></canvas>
+	<div style="background: #666; position: absolute; left: 0; top: 0; width: 200px; height: 200px; z-index: -1;"></div>
+<script>
+	var draw = document.getElementById('draw');
+	var context = draw.getContext("2d");
+	context.fillStyle = "red";
+	context.fillRect(10, 10, 100, 100);
+	context.fillStyle = "rgba(0, 0, 255, 0.5)";
+	context.fillRect(30, 30, 100, 100);//超出canvas大小后绘制的矩形再大也不会超出canvas的范围
+	context.strokeStyle = "#00ff00";
+	context.strokeRect(10, 60, 10, 20);
+	context.clearRect(40, 40, 30, 30);
+</script>
+</body>
+</html>
